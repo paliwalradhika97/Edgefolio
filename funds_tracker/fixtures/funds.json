@@ -1,0 +1,62 @@
+[
+    {
+        "model": "funds_tracker.fund",
+        "pk": 194,
+        "fields": {
+            "name": "Amazing Fund 1",
+            "strategy": "Long/Short Equity",
+            "aum": "355000000.00",
+            "inception_date": "2011-03-10"
+        }
+    },
+    {
+        "model": "funds_tracker.fund",
+        "pk": 195,
+        "fields": {
+            "name": "Pretty Good Fund X",
+            "strategy": "Global Macro",
+            "aum": null,
+            "inception_date": "2012-04-10"
+        }
+    },
+    {
+        "model": "funds_tracker.fund",
+        "pk": 196,
+        "fields": {
+            "name": "Quite OK Capital Fund 1",
+            "strategy": "Arbitrage",
+            "aum": "256000000.00",
+            "inception_date": "2015-10-01"
+        }
+    },
+    {
+        "model": "funds_tracker.fund",
+        "pk": 197,
+        "fields": {
+            "name": "High Growth High Risk Fund 3",
+            "strategy": "Long/Short Equity",
+            "aum": "452000000.00",
+            "inception_date": "2012-10-01"
+        }
+    },
+    {
+        "model": "funds_tracker.fund",
+        "pk": 198,
+        "fields": {
+            "name": "Crypto Arbitrage Strategy X",
+            "strategy": "Arbitrage",
+            "aum": "123000000.00",
+            "inception_date": "2012-06-10"
+        }
+    },
+    {
+        "model": "funds_tracker.fund",
+        "pk": 199,
+        "fields": {
+            "name": "Another Fund Y",
+            "strategy": "Global Macro",
+            "aum": null,
+            "inception_date": null
+        }
+    }
+    ]

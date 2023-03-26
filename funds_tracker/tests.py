@@ -31,9 +31,8 @@ class FundTestCase(TestCase):
         with open('static/sample_fund_data_error.csv') as fp:
             response = client.post('/api/fund/', {'file_uploaded': fp})
             json_response = json.loads(response.content)
-
             self.assertEqual(response.status_code, 400)            
-            self.assertEqual(json_response["errors"]["row_num"], "4")
+            self.assertEqual(json_response["errors"]["file_error"]["row_num"], "4")
           
 
 

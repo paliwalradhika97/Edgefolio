@@ -1,3 +1,4 @@
+# import necessary modules and classes
 from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework import status
@@ -8,6 +9,7 @@ from django.http import Http404
 from django.shortcuts import render
 from django.db.models import Sum
 
+# define a class-based API view for handling requests to the /funds endpoint
 class FundAPI(APIView):
     renderer_classes = [CSVRenderer]
     def get(self, request):     
@@ -29,6 +31,7 @@ class FundAPI(APIView):
         else:
             return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
+# define a class-based API view for handling requests to the /funds/{id} endpoint
 class FundObjectAPI(APIView):
     def get_object(self, pk):
         try:
@@ -41,6 +44,8 @@ class FundObjectAPI(APIView):
         serializer = FundSerializer(funds, many=False)
         return Response(serializer.data)
 
+
+# define a function for rendering the homepage
 def home(request):
     return render(request, "homepage.html")
  

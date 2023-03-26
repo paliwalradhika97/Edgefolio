@@ -73,6 +73,7 @@
       url: "api/fund/?strategy=" + strategy,
       dataType: "json",
       success: function (response) {
+        // If funds are available, create a table and add the data to it.
         if (response["data"].length > 0) {
           var data = response["data"];
           totalFunds = data.length;
@@ -93,8 +94,7 @@
             }
             table += "</td></tr>";
           }
-          console.log(table);
-
+          // Add the table to the HTML and update the footer with the total number of funds and AUM.
           $("#funds-table tbody").html(table);
           var footer =
             ` <tr>
@@ -114,6 +114,7 @@
         }
       },
       error: function () {
+        // If there is an error retrieving funds, display a message to the user
         $("#funds-table tbody").html("<p>Failed to retrieve funds.</p>");
       },
     });
@@ -138,14 +139,15 @@
       contentType: false,
       data: files,
       success: function (response) {
+        // If the upload is successful, fetch the funds again and display a success message to the user.
         if (response.success) {
           fetch_fund();
           Swal.fire("", response.success, "success");
         }
       },
       error: function (err) {
-        var response = err.responseJSON;
-        console.log(response)
+        // If there is an error with the upload, display an error message to the user.
+        var response = err.responseJSON;        
         if (response.errors) {
           var row_num = response.errors["file_error"].row_num;
           var errors = response.errors["file_error"]["errors"];
